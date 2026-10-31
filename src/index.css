@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nexa-bg: #081426;
+  --color-nexa-sidebar: #10223D;
+  --color-nexa-card: #112541;
+  --color-nexa-card-secondary: #162D4D;
+  --color-nexa-hover: #1B365B;
+  --color-nexa-border: #263F63;
+  --color-nexa-primary: #3B82F6;
+  --color-nexa-accent: #75A7FF;
+  --color-nexa-text-main: #F8FAFC;
+  --color-nexa-text-secondary: #A9BAD4;
+  --color-nexa-text-muted: #7890B2;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-headline: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #081426;
+  color: #F8FAFC;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+}
