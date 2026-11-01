@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, Link } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
 import { Topbar } from '../components/Topbar';
 import { useAuth } from '../context/AuthContext';
@@ -81,8 +81,18 @@ export const DashboardLayout: React.FC = () => {
         </main>
 
         {/* Workspace Footer */}
-        <footer className="border-t border-[#263F63] px-4 sm:px-6 md:px-8 xl:px-10 py-4 text-xs text-[#A9BAD4] font-mono flex flex-col sm:flex-row items-center justify-between gap-2 bg-[#081426]/90">
-          <span>© 2026 NEXA Systems Inc. Enterprise Vault</span>
+        <footer className="border-t border-[#263F63] px-4 sm:px-6 md:px-8 xl:px-10 py-4 text-xs text-[#A9BAD4] font-mono flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#081426]/90">
+          <div className="flex flex-wrap items-center gap-2">
+            <span>© 2026 NEXA Workspace</span>
+            <span className="text-slate-600">•</span>
+            <Link to="/privacy" className="hover:text-white transition-colors underline-offset-4 hover:underline">
+              Privacy Policy
+            </Link>
+            <span className="text-slate-600">•</span>
+            <Link to="/terms" className="hover:text-white transition-colors underline-offset-4 hover:underline">
+              Terms of Service
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <span className="hidden md:inline text-[#7890B2]">256-bit AES Active</span>
             <span className="text-[#75A7FF]">v4.12-sec</span>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { NexaLogo } from '../components/NexaLogo';
 import { WorkspaceGraphic } from '../components/WorkspaceGraphic';
 import { GoogleButton } from '../components/GoogleButton';
@@ -166,17 +166,29 @@ export const LoginPage: React.FC = () => {
               <LoginForm
                 onForgotPasswordClick={() => setIsForgotPasswordOpen(true)}
               />
+
+              <p className="text-[11px] text-[#A9BAD4]/80 text-center mt-4">
+                By signing in, you agree to our{' '}
+                <Link to="/terms" className="text-[#75A7FF] hover:underline">
+                  Terms of Service
+                </Link>{' '}
+                and acknowledge our{' '}
+                <Link to="/privacy" className="text-[#75A7FF] hover:underline">
+                  Privacy Policy
+                </Link>
+                .
+              </p>
             </div>
 
-            {/* Trust, Encryption & Compliance Badges */}
+            {/* Trust & Encryption Architecture Badges */}
             <div className="flex items-center justify-between pt-6 mt-6 border-t border-[rgba(169,186,212,0.12)] text-xs text-[#A9BAD4]">
               <div className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-[#75A7FF]" />
-                <span className="text-[11px] sm:text-xs font-medium">256-bit AES Encryption</span>
+                <span className="text-[11px] sm:text-xs font-medium">AES-256-GCM Vault</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-[11px] sm:text-xs font-medium">SOC2 Type II Compliant</span>
+                <span className="text-[11px] sm:text-xs font-medium">Argon2id Challenge Auth</span>
               </div>
             </div>
           </div>
@@ -185,16 +197,23 @@ export const LoginPage: React.FC = () => {
 
       {/* Footer */}
       <footer className="relative z-10 w-full px-4 sm:px-6 lg:px-10 pb-5 sm:pb-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#A9BAD4] font-mono">
-        <div className="flex items-center gap-2">
-          <span>© 2026 NEXA Systems Inc. Enterprise Vault</span>
+        <div className="flex flex-wrap items-center gap-2">
+          <span>© 2026 NEXA Workspace</span>
+          <span className="text-slate-600">•</span>
+          <Link to="/privacy" className="hover:text-white transition-colors underline-offset-4 hover:underline">
+            Privacy Policy
+          </Link>
+          <span className="text-slate-600">•</span>
+          <Link to="/terms" className="hover:text-white transition-colors underline-offset-4 hover:underline">
+            Terms of Service
+          </Link>
           <span className="text-slate-600">•</span>
           <span className="text-[#75A7FF]">v4.12-sec</span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="hidden md:inline text-slate-500">FIPS 140-2 Level 3 Validated</span>
           <div className="flex items-center gap-1 text-[#75A7FF]">
             <Radio className="w-3 h-3 text-[#2563EB]" />
-            <span>E2EE Active</span>
+            <span>Zero-Trust Active</span>
           </div>
         </div>
       </footer>

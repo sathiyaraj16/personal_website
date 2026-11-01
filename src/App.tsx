@@ -13,6 +13,8 @@ import { GoogleDrivePage } from './pages/GoogleDrivePage';
 import { LoginPage } from './pages/LoginPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { LockerPage } from './pages/LockerPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { TermsPage } from './pages/TermsPage';
 
 export const App: React.FC = () => {
   return (
@@ -22,8 +24,10 @@ export const App: React.FC = () => {
           <TaskProvider>
             <BrowserRouter>
             <Routes>
-              {/* Public Authentication Route */}
+              {/* Public Authentication & Legal Routes */}
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
 
               {/* Protected Application Routes */}
               <Route element={<ProtectedRoute />}>
